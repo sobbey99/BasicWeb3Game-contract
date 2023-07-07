@@ -20,11 +20,7 @@ contract RunnerCollection is ERC1155 {
         baseUri = _baseUri;
     }
 
-    function mint(uint256 amount) public {
-        tokenCount += 1;
-        _mint(msg.sender, tokenCount, amount, "");
-    }
-
+    // we need to override the uri function so our nfts are compatible with opensea
     function uri(
         uint256 _tokenId
     ) public view override returns (string memory) {
@@ -32,5 +28,10 @@ contract RunnerCollection is ERC1155 {
             string(
                 abi.encodePacked(baseUri, Strings.toString(_tokenId), ".json")
             );
+    }
+
+    function mint(uint256 amount) public {
+        tokenCount += 1;
+        _mint(msg.sender, tokenCount, amount, "");
     }
 }
