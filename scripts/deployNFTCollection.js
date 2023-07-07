@@ -9,7 +9,7 @@ async function main() {
   const CollectionNFTs = await hre.ethers.deployContract("RunnerCollection", [
     "Runner",
     "RUN",
-    "https://ipfs.io/ipfs/QmWAjoqy9hxyQX8BZESny6Q4auedFJ5GsGDgdYrsqmUaEe/",
+    "https://ipfs.io/ipfs/QmZX7Mi8qFw11qvyb4E2okkEpjPyZoQpmK1AhF37Q4HQzG/",
   ]);
 
   await CollectionNFTs.waitForDeployment();
